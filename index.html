@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pittsburgh Cuisine</title>
+        <script src="https://d3js.org/d3.v6.min.js"></script>
+        <script src="//d3js.org/topojson.v1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+        <script src="https://d3js.org/d3-geo-projection.v3.min.js"></script>
+        <link rel="stylesheet" href='styles.css'>
+    </head>
+    <body>
+        <h1>Enjoy Your Food Hunt in Pittsburgh!</h1>
+        <svg id="map" width="800" height="650"></svg>
+        <svg id="legend" width="100" height="450"></svg>
+
+        <div id='info_text'>
+            <p><b>Neighborhood Name: </b></p>
+        </div>
+        <div id='rst_text'>
+            <p id='rst_name'><b>Restaurant Name: </b></p>
+            <!-- <p id='rst_catg'><b>Categories: </b></p> -->
+            <p id='rst_star'><b>Review Stars: </b></p>
+            <p id='rst_ctn'><b>Review Count: </b></p>
+            <p id='rst_addr'><b>Address: </b></p>
+        </div>
+        <script src="main.js"></script>
+
+        <!-- word cloud -->
+        <svg id="cloud" width="300" height="400"></svg>
+        <div id="cloudtitle">
+            <p><strong>Most frequent review words:</strong></p>
+        </div>
+        <script src="wordcloud.js"></script>
+
+        <!--radar chart-->
+        <svg id="glyph" width="300" height="300"></svg>
+        <!-- <script src="radar copy.js"></script> -->
+        <div  class = 'left_slider'>
+            <b><p>Value:</p></b><span id="textspan1"></span>
+            <p>Price</p>
+            <input class='slider' id='price' type='range' min='0' max='4' value='2' step='1'>
+            <input class='textbox' type="text" id="price_text" value="$$">
+
+            <p>Rating</p>
+            <input class='slider' id='rating' type='range' min='0' max='5' value='3' step='0.5'>
+            <input class='textbox' type="text" id="rating_text" value="3">
+
+            <p>Review Count</p>
+            <input class='slider' id='review' type='range' min='0' max='300' value='200' step='100'>
+            <input class='textbox' type="text" id="review_text" value="smaller than 200"><br><br><br>
+
+            <!-- <p>Good For Kids</p>
+            <input id='kids' type='range' min='0' max='1' value='1' step='1'>
+            <input type="text" id="kids_text" value="TRUE">
+
+            <p>Accept Credit Card</p>
+            <input id='card' type='range' min='0' max='1' value='1' step='1'>
+            <input type="text" id="card_text" value="TRUE"> -->
+
+        </div>
+        <!-- importance -->
+        <div  class = 'right_slider'>
+            <b><p>Importance:</p></b><span id="textspan2"></span>
+            <p>Price</p>
+            <input class='slider' id='price_im' type='range' min='1' max='4' value='3' step='1'>
+            <input class='textbox' type="text" id="slidertext_price" value="more important">
+        <!-- </div id> -->
+        <!-- <div  class = 'right_slider'> -->
+            <p>Rating</p>
+            <input class='slider' id='rating_im' type='range' min='1' max='4' value='3' step='1'>
+            <input class='textbox' type="text" id="slidertext_rating" value="more important">
+        <!-- </div> -->
+        <!-- <div class = 'right_slider'> -->
+            <p>Review Count</p>
+            <input class='slider' id='review_im' type='range' min='1' max='4' value='3' step='1'>
+            <input class='textbox' type="text" id="slidertext_review" value="more important">
+        </div>
+
+        <div id="checkck">
+        <input type="checkbox" id="price_sort" name="price_sort" value="price_ranking" checked = True>
+        <label for="vehicle1">Sort by price</label>
+        <input type="checkbox" id="rating_sort" name="rating_sort" value="stars_ranking" checked = True>
+        <label for="vehicle1">Sort by rating</label>
+        <input type="checkbox" id="review_sort" name="review_sort" value="review_ranking" checked = True>
+        <label for="vehicle1">Sort by review</label>
+        </div>
+        <div id="days">
+        <input type="checkbox" id="Monday" name="Monday" value="Monday" checked = True>
+        <label for="vehicle1">Monday</label>
+        <input type="checkbox" id="Tuesday" name="Tuesday" value="Tuesday" checked = True>
+        <label for="vehicle1">Tuesday</label>
+        <input type="checkbox" id="Wednesday" name="Wednesday" value="Wednesday" checked = True>
+        <label for="vehicle1">Wednesday</label>
+        <input type="checkbox" id="Thursday" name="Thursday" value="Thursday" checked = True>
+        <label for="vehicle1">Thursday</label>
+        <input type="checkbox" id="Friday" name="Friday" value="Friday" checked = True>
+        <label for="vehicle1">Friday</label>
+        <input type="checkbox" id="Saturday" name="Saturday" value="Saturday" checked = True>
+        <label for="vehicle1">Saturday</label>
+        <input type="checkbox" id="Sunday" name="Sunday" value="Sunday" checked = True>
+        <label for="vehicle1">Sunday</label>
+    </div>
+
+    <!-- <div id="bar-container"> -->
+        <svg id="bar-chart" width="800" height="600"></svg>
+    <!-- </div> -->
+        <!-- <script src="bar.js"></script> -->
+
+    </body>
+</html>
