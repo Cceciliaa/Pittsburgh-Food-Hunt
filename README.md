@@ -2,7 +2,10 @@
 There are a lot of restaurants in Pittsburgh but it is hard to find the “best” places to eat when searching online. To better understand the food scene in Pittsburgh, we are interested to show the different types of restaurants on map and sort the restaurant in different rating criteria to help people find the top ranking restaurants to eat in Pittsburgh.
 
 ## Views and Interactions
-There are three major views: a geometric map view, a line chart glyph view, and a stacked bar-chart view. The interactions among three views are linked. 
+There are three major views: a geometric map view, a line chart glyph view, and a stacked bar-chart view. The interactions among three views are linked.    
+
+Screenshot of the general view is as below:                
+![alt text](https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F65d89213-4205-4a75-ae1f-32b840ca0ef4%2FScreen_Shot_2021-05-04_at_10.16.30_AM.png?table=block&id=2516236e-068a-45f7-a002-c75679e40aa3&width=2880&userId=6de819c4-42ee-4bff-90ed-21cc836a2fd0&cache=v2)
 
 When the user hovers over a point on the map, a glyph showing the information for the corresponding restaurant will appear on the left bottom corner of the window, along with the detailed information about the selected restaurant in text, and the stacked bar chart will show information for top 10 restaurants of the same category
 to the selected restaurant.
